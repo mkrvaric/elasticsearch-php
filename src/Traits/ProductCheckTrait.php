@@ -25,6 +25,8 @@ trait ProductCheckTrait
      */
     private function productCheck(ResponseInterface $response): void
     {
+        // This enables AWS opensearch support again
+        return true;
         $statusCode = (int) $response->getStatusCode();
         if ($statusCode >= 200 && $statusCode < 300) {
             $product = $response->getHeaderLine(Elasticsearch::HEADER_CHECK);
